@@ -180,11 +180,15 @@ def main():
                             torch.stack(
                                 [
                                     F.kl_div(
-                                        outputs.logits[step][batch],
+                                        torch.log(
+                                            F.softmax(
+                                                outputs.logits[step][batch], dim=-1
+                                            )
+                                        ),
                                         uniform,
-                                        reduction="batchmean",
+                                        reduction="none",
                                         log_target=False,
-                                    )
+                                    ).sum()
                                     for step in range(len(outputs.logits))
                                 ]
                             )

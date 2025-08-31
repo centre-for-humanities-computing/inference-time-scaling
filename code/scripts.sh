@@ -10,7 +10,7 @@ exec > output.log 2>&1
 # Forward Pass -------------------------------------------------------------------------
 for model in "${models[@]}"; do
     for dataset in "${datasets[@]}"; do
-        uv run python main.py --method "forward-pass" --model_id "$model" --dataset "$dataset" --n_proposal 4
+        uv run python main.py --method "forward-pass" --model_id "$model" --dataset "$dataset" --n_proposal 4 --overwrite True
     done
 done
 
