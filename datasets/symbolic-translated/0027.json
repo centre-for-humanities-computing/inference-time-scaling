@@ -1,0 +1,8 @@
+{
+  "question": "James modtager 80 e-mails om dagen. 20% af disse e-mails kræver ikke noget svar. Han besvarer resten af dem. Hvor mange e-mails svarer han på i en 5-dages arbejdsuge?",
+  "answer": "Han modtager 80*.2=<<80*.2=16>>16 e-mails, som han ikke behøver at svare på\nSå han svarer på 80-16=<<80-16=64>>64 e-mails\nSå han svarer på 64*5=<<64*5=320>>320 e-mails om ugen\n#### 320",
+  "id_orig": 1063,
+  "id_shuffled": 27,
+  "question_annotated": "{name,James} modtager {n,80} e-mails om dagen. {p,20}% af disse e-mails kræver ikke noget svar. {name,James} svarer på resten af dem. Hvor mange e-mails svarer {name,James} på i en {d,5} dages arbejdsuge?\n\n#init:\n- name = sample(names)\n- $n = range(50, 200)\n- $p = range(5, 40)\n- $d = range(3, 7)\n\n#conditions:\n- is_int(n * p / 100)\n- is_int(n * (100 - p) / 100)\n\n#answer: d * (n * (100 - p) / 100)",
+  "answer_annotated": "{name} modtager {n * p / 100}=<<{n}*{p}/100={n*p//100}>>{n*p//100} e-mails, der ikke kræver et svar\nSå {name} svarer på {n}-{n*p//100}=<<{n}-{n*p//100}={n*(100-p)//100}>>{n*(100-p)//100} e-mails pr. dag\nI en {d} dages arbejdsuge, svarer {name} på {n*(100-p)//100}*{d}=<<{n*(100-p)/100}*{d}={d*(n*(100-p)//100)}>> {d*(n*(100-p)//100)} e-mails\n#### {d*(n*(100-p)//100)}"
+}

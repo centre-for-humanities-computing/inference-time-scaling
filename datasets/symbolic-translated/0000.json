@@ -1,0 +1,8 @@
+{
+  "question": "Benny så en 10-fods haj med 2 remoras på 6 tommer hver fastgjort til den. Hvor mange procent af hajens kropslængde udgør den samlede længde af remoras?",
+  "answer": "Først, find den samlede længde af remoras i tommer: 6 tommer/remora * 2 remoras = <<6*2=12>>12 tommer\nDerefter dividerer du det tal med 12 for at konvertere det til fod: 12 tommer / 12 tommer/fod = <<1=1>>1 fod\nDerefter dividerer du den samlede remoralængde i fod med hajens længde og ganger med 100% for at udtrykke svaret som en procentdel: 1 fod / 10 fod * 100% = 10%\n#### 10",
+  "id_orig": 473,
+  "id_shuffled": 0,
+  "question_annotated": "{n, Benny} så en {x,10}-fod {big_fish,haj} med {k,2} {y,6}-tommers remoras fastgjort til den. Hvor mange procent af {big_fish,haj}ens kropslængde udgør den samlede længde af remoras?\n\n#init:\n- n = sample(names)\n- big_fish = sample([\"dolphin\", \"whale\", \"shark\"])\n- $x = range(10, 500, 10)\n- $k = range(2, 10)\n- $y = range(2, 100)\n\n#conditions:\n- k * y < x * 12\n- divides(k*y,12)\n- divides(x * 12, k*y)\n- divides(100, x * 12 / (k*y))\n\n#answer: int((k * y)/(x * 12) * 100)",
+  "answer_annotated": "Først, find den samlede længde af remoras i tommer: {y} tommer/remora * {k} remoras = <<{y}*{k}={k*y}>>{k*y} tommer.\nDerefter dividerer du det tal med 12 for at konvertere det til fod: {k*y} tommer / 12 tommer/fod = <<{k*y}/12>>{k*y//12} fod.\nDerefter dividerer du den samlede remoralængde i fod med {big_fish}ens længde og ganger med 100% for at udtrykke svaret som en procentdel: {k*y//12} fod / {x} fod * 100% = {int(k*y/(12*x)*100)}%\n\n#### {int(k*y/(12*x)*100)}"
+}

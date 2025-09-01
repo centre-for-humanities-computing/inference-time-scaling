@@ -1,0 +1,8 @@
+{
+  "question": "Et brød har 24 skiver. Hvis Abby kan spise 2 skiver om dagen, mens Josh kan spise dobbelt så meget, hvor mange dage vil brødet vare?",
+  "answer": "Josh kan spise 2 x 2 = <<2*2=4>>4 skiver om dagen.\nSammen kan Abby og Josh spise 2 + 4 = <<2+4=6>>6 skiver om dagen.\nSå et brød vil vare i 24/6 = <<24/6=4>>4 dage.\n#### 4",
+  "id_orig": 921,
+  "id_shuffled": 37,
+  "question_annotated": "Et {item,brød} har {n,24} {unit,skiver}. Hvis {name1,Abby} kan spise {x,2} {unit,skiver} om dagen, mens {name2,Josh} kan spise {mult,dobbelt} så meget, hvor mange dage vil {item,brødet} vare?\n\n#init:\n- item = sample([\"pizza\", \"cake\", \"pie\", \"lasagne\"])\n- unit = sample([\"stykker\", \"portioner\", \"serveringer\"])\n- name1, name2 = sample(names, 2)\n- $n = range(12, 49, 3)\n- $x = range(2, 6)\n- $mult = sample(multiple_ice+multi_times)\n\n#conditions:\n- divides(n, x + x*mult)\n\n#answer: n // (x + x*mult)",
+  "answer_annotated": "{name2} kan spise {x} x {mult} = <<{x}*{mult}={x*mult}>>{x*mult} {unit} om dagen.\nSammen kan {name1} og {name2} spise {x} + {x*mult} = <<{x}+{x*mult}={x+x*mult}>>{x+x*mult} {unit} om dagen.\nSå en {item} vil vare i {n}/{x+x*mult} = <<{n}/{x+x*mult}={n//(x+x*mult)}>>{n//(x+x*mult)} dage.\n#### {n//(x+x*mult)}"
+}

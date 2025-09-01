@@ -1,0 +1,8 @@
+{
+  "question": "Et tårn er lavet af 4 blå blokke, dobbelt så mange gule blokke og et ukendt antal røde blokke. Hvis der i alt er 32 blokke i tårnet, hvor mange røde blokke er der?",
+  "answer": "Der er 4*2 = <<4*2=8>>8 gule blokke i tårnet.\nDer er 32-4-8 = <<32-4-8=20>>20 røde blokke i tårnet.\n#### 20",
+  "id_orig": 1268,
+  "id_shuffled": 41,
+  "question_annotated": "Et {structure,tårn} er lavet af {n1,4} {color1,blå} {obj,blok}ke, {mult, dobbelt} så mange {color2,gule} {obj,blok}ke, og et ukendt antal {color3,røde} {obj,blok}ke. Hvis der i alt er {total,32} {obj,blok}ke i {structure,tårn} i alt, hvor mange {color3,røde} {obj,blok}ke er der?\n\n#init:\n- structure = sample([\"bygning\", \"pyramide\", \"bunke\"])\n- obj = sample([\"mursten\", \"terning\", \"flise\"])\n- color1, color2, color3 = sample([\"grøn\", \"lilla\", \"orange\", \"pink\", \"hvid\", \"sort\"], 3)\n- $n1 = range(2, 10)\n- $mult = sample(multi_times+multiple_ice)\n- $total = range(20, 50)\n\n#conditions:\n- total > n1 + mult * n1\n\n#answer: total - n1 - mult * n1",
+  "answer_annotated": "Der er {n1}*{mult} = <<{n1}*{mult}={n1*mult}>>{n1*mult} {color2} {obj}e i {structure}.\nDer er {total}-{n1}-{n1*mult} = <<{total}-{n1}-{n1*mult}={total-n1-n1*mult}>>{total-n1-n1*mult} {color3} {obj}e i {structure}.\n#### {total-n1-n1*mult}"
+}

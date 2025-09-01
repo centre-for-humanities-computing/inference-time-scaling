@@ -1,0 +1,8 @@
+{
+  "question": "Jennifers hund har 8 hvalpe, hvoraf 3 har pletter. Brandons hund har 12 hvalpe, hvoraf 4 har pletter. Hvilken procentdel af alle hvalpene har pletter?",
+  "answer": "Først find det totale antal hvalpe: 8 hvalpe + 12 hvalpe = <<8+12=20>>20 hvalpe\nDerefter find det totale antal hvalpe med pletter: 3 hvalpe + 4 hvalpe = <<3+4=7>>7 hvalpe\nDerefter dividerer du antallet af plettede hvalpe med det totale antal hvalpe og ganger med 100% for at finde procentdelen af hvalpe med pletter: 7 hvalpe / 20 hvalpe * 100% = 35%\n#### 35",
+  "id_orig": 458,
+  "id_shuffled": 15,
+  "question_annotated": "{name1, Jennifer}s hund har {n1, 8} hvalpe, {k1,3} af dem har pletter. {name2, Brandon}s hund har {n2,12} hvalpe, {k2,4} af dem har pletter. Hvilken procentdel af alle hvalpene har pletter?\n\n#init:\n- name1, name2 = sample(names, 2)\n- $n1 = range(950, 1050, 5)\n- $n2 = range(400, 650, 5)\n- $k1 = range(170, 290, 10)\n- $k2 = range(120, 170, 10)\n\n#conditions:\n- divides(n1 + n2, k1 + k2)\n- is_int(100 * (k1+k2) / (n1+n2))\n\n#answer: int(100 * (k1+k2) / (n1+n2))",
+  "answer_annotated": "Først find det totale antal hvalpe: {n1} hvalpe + {n2} hvalpe = <<{n1}+{n2}={n1+n2}>>{n1+n2} hvalpe\nDerefter find det totale antal hvalpe med pletter: {k1} hvalpe + {k2} hvalpe = <<{k1}+{k2}={k1+k2}>>{k1+k2} hvalpe\nDerefter dividerer du antallet af plettede hvalpe med det totale antal hvalpe og ganger med 100% for at finde procentdelen af hvalpe med pletter: {k1+k2} hvalpe / {n1+n2} hvalpe * 100% = {int(100 * (k1+k2) / (n1+n2))}%\n#### {int(100 * (k1+k2) / (n1+n2))}"
+}

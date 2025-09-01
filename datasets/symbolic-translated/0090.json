@@ -1,0 +1,8 @@
+{
+  "question": "Charlie har tre gange så mange Facebook-venner som Dorothy. James har fire gange så mange venner på Facebook som Dorothy. Hvis Charlie har 12 venner på Facebook, hvor mange Facebook-venner har James?",
+  "answer": "Dorothy har 12 / 3 = <<12/3=4>>4 Facebook-venner.\nJames har 4 * 4 = <<4*4=16>>16 Facebook-venner.\n#### 16",
+  "id_orig": 149,
+  "id_shuffled": 90,
+  "question_annotated": "{name1,Charlie} har {mult1,tre} så mange {platform,Facebook} venner som {name2,Dorothy}. {name3,James} har {mult2,fire} så mange venner på {platform,Facebook} som {name2,Dorothy}. Hvis {name1,Charlie} har {n,12} venner på {platform,Facebook}, hvor mange {platform,Facebook} venner har {name3,James}?\n\n#init:\n- name1, name2, name3 = sample(names, 3)\n- platform = sample([\"Instagram\", \"Twitter\", \"LinkedIn\", \"TikTok\", \"Snapchat\"])\n- $mult1 = sample(multi_times+multiple_ice)\n- $mult2 = sample(multi_times+multiple_ice)\n- $n = range(10, 201)\n\n#conditions:\n- mult2 != mult1\n- is_int(n / mult1)\n\n#answer: int((n / mult1) * mult2)",
+  "answer_annotated": "{name2} har {n} / {mult1} = <<{n}/{mult1}={n//mult1}>>{n//mult1} {platform} venner.\n{name3} har {mult2} * {n//mult1} = <<{mult2}*{n//mult1}={int((n / mult1) * mult2)}>>{int((n / mult1) * mult2)} {platform} venner.\n#### {int((n / mult1) * mult2)}"
+}

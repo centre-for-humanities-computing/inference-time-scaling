@@ -1,0 +1,8 @@
+{
+  "question": "Der er i øjeblikket 3 røde bolde, 11 blå bolde, og 25 grønne bolde i butikken. Røde bolde koster $9, Blå bolde koster $5 og grønne bolde koster $3. Hvor meget vil butikken have modtaget efter alle boldene er solgt?",
+  "answer": "For de røde bolde, 3 bolde * $9/bolde = $<<3*9=27>>27.\nFor de blå bolde, 11 bolde * $5/bolde = $<<11*5=55>>55.\nFor de grønne bolde, 25 bolde * $3/bolde = $<<25*3=75>>75.\nFor alle bolde, $27 + $55 + $75 = $<<27+55+75=157>>157.\n#### 157",
+  "id_orig": 1111,
+  "id_shuffled": 75,
+  "question_annotated": "Der er i øjeblikket {n1,3} {c1,røde} bolde, {n2,11} {c2,blå} bolde, og {n3,25} {c3,grønne} bolde i {place,butikken}. {c1,Røde} bolde koster {cur,$}{p1,9}, {c3,grønne} bolde koster {cur,$}{p3,3}, og {c2,Blå} bolde koster {cur,$}{p2,5}. Hvor meget vil {place,butikken} have modtaget efter alle boldene er solgt?\n\n#init:\n- place = sample([\"butik\", \"shop\", \"marked\", \"lager\"])\n- c1, c2, c3 = sample([\"rød\", \"blå\", \"grøn\", \"gul\", \"lilla\", \"orange\", \"pink\"], 3)\n- cur = sample(currencies_sym)\n- $n1 = range(3, 20)\n- $n2 = range(5, 30)\n- $n3 = range(15, 50)\n- $p1 = range(5, 15)\n- $p2 = range(3, 10)\n- $p3 = range(2, 8)\n\n\n#answer: n1*p1 + n2*p2 + n3*p3",
+  "answer_annotated": "For de {c1} bolde, {n1} bolde * {cur}{p1}/bolde = {cur}<<{n1}*{p1}={n1*p1}>>{n1*p1}.\nFor de {c2} bolde, {n2} bolde * {cur}{p2}/bolde = {cur}<<{n2}*{p2}={n2*p2}>>{n2*p2}.\nFor de {c3} bolde, {n3} bolde * {cur}{p3}/bolde = {cur}<<{n3}*{p3}={n3*p3}>>{n3*p3}.\nFor alle bolde, {cur}{n1*p1} + {cur}{n2*p2} + {cur}{n3*p3} = {cur}<<{n1*p1}+{n2*p2}+{n3*p3}={n1*p1 + n2*p2 + n3*p3}>>{n1*p1 + n2*p2 + n3*p3}.\n#### {n1*p1 + n2*p2 + n3*p3}"
+}

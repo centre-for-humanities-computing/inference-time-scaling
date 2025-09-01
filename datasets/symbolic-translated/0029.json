@@ -1,0 +1,8 @@
+{
+  "question": "Brett er 14 år gammel. Om fire år vil hans søster Angela være tre gange så gammel, som han er nu. Hvor gammel er Angela lige nu?",
+  "answer": "Om fire år vil Angela være 14*3=<<14*3=42>>42.\nLige nu er Angela 42-4=<<42-4=38>>38 år gammel.\n#### 38",
+  "id_orig": 496,
+  "id_shuffled": 29,
+  "question_annotated": "{name1,Brett} er {age1,14} år gammel. Om {years,fire} år vil hans {relation_type,søster} {name2,Angela} være {mult,tre} gange så gammel, som {name1,Brett} er nu. Hvor gammel er {name2,Angela} lige nu?\n\n#init:\n- name1 = sample(names_male)\n- name2 = sample(names_female)\n- relation_type = sample(['søster', 'fætter'])\n- $age1 = range(8, 25)\n- $years = range(2, 10)\n- $mult = range(2, 5)\n\n#conditions:\n- age1 * mult - years > 0\n\n#answer: age1 * mult - years",
+  "answer_annotated": "{years} år fra nu vil {name2} være {age1}*{mult}=<<{age1}*{mult}={age1*mult}>>{age1*mult}.\nLige nu er {name2} {age1*mult}-{years}=<<{age1*mult}-{years}={age1*mult-years}>>{age1*mult-years} år gammel.\n#### {age1*mult-years}"
+}

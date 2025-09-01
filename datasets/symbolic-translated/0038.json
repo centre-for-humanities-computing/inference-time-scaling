@@ -1,0 +1,8 @@
+{
+  "question": "Et brød hos bageren koster $2. Bagels koster $1 hver. Hvor meget mere koster 3 brød end 2 bagels?",
+  "answer": "3 brød koster 3 * $2 = $<<3*2=6>>6.\n2 bagels koster 2 * $1 = $<<2*1=2>>2.\nBrødene koster $6 - $2 = $<<6-2=4>>4 mere end bagelsene.\n#### 4",
+  "id_orig": 799,
+  "id_shuffled": 38,
+  "question_annotated": "Et {item1,brød} hos {shop,bageren} koster {currency,$}{price1,2}. {item2,Bagel}s koster {currency,$}{price2,1} hver. Hvor meget mere koster {n1,3} {item1,brød} end {n2,2} {item2,bagel}s?\n\n#init:\n- item1 = sample([\"brød\", \"surdej\"])\n- item2 = sample([\"bagel\", \"muffin\", \"croissant\", \"biscuit\"])\n- shop = sample([\"bager\", \"café\", \"butik\", \"marked\"])\n- currency = sample(currencies_sym)\n- $price1 = range(2, 10)\n- $price2 = range(1, 5)\n- $n1 = range(2, 10)\n- $n2 = range(2, 10)\n\n#conditions:\n- n1 * price1 > n2 * price2\n\n#answer: n1 * price1 - n2 * price2",
+  "answer_annotated": "{n1} {item1} koster {n1} * {currency}{price1} = {currency}<<{n1}*{price1}={n1*price1}>>{n1*price1}.\n{n2} {item2}s koster {n2} * {currency}{price2} = {currency}<<{n2}*{price2}={n2*price2}>>{n2*price2}.\n{item1} koster {currency}{n1*price1} - {currency}{n2*price2} = {currency}<<{n1*price1}-{n2*price2}={n1*price1-n2*price2}>>{n1*price1-n2*price2} mere end {item2}s.\n#### {n1*price1-n2*price2}"
+}

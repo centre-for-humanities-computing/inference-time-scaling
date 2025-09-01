@@ -1,0 +1,8 @@
+{
+  "question": "John har 10 hektar ananasmark. Der er 100 ananas pr. hektar. John kan høste sine ananas hver 3. måned. Hvor mange ananas kan John høste inden for et år?",
+  "answer": "John har 100 x 10= <<100*10=1000>>1000 ananas på sin mark.\nJohn kan høste sine ananas 12 ÷ 3 = <<12/3=4>>4 gange om året\nDerfor kan John høste 1000 x 4 = <<1000*4=4000>>4000 ananas om året.\n#### 4000",
+  "id_orig": 145,
+  "id_shuffled": 6,
+  "question_annotated": "{name,John} har {x,10} {area,hektar} ananasmark. Der er {k,100} ananas pr. {area,hektar}. {name, John} kan høste sine ananas hver {n,3} måneder. Hvor mange ananas kan {name,John} høste inden for et år?\n\n#init:\n- name = sample(names_male)\n- fruit = sample(fruits)\n- area = sample(['hektar', 'kvadratgård', 'kvadratmeter'])\n- $x = range(5, 100, 5)\n- $k = range(2, 101)\n- $n = sample([1, 2, 3, 4, 6, 12])\n\n#answer: x * k * (12//n)",
+  "answer_annotated": "{name} har {k} x {x}= <<{k}*{x}={k*x}>>{k*x} ananas på sin mark.\n{name} kan høste sine ananas 12 ÷ {n} = <<{12}/{n}={12//n}>>{12//n} gange om året\nDerfor kan {name} høste {k*x} x {12//n} = <<{k*x}*{12//n}={k*x*12//n}>>{k*x*12//n} ananas om året.\n#### {k*x*12//n}"
+}

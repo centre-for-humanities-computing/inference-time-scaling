@@ -1,0 +1,8 @@
+{
+  "question": "Når Sophie passer sin nevø, finder hun en række legetøj frem til ham. Byggestensposen har 31 klodser i sig. Kurven med tøjdyr har 8 tøjdyr indeni. Tårnet med stable-ringe har 9 flerfarvede ringe på sig. Sophie købte for nylig et rør med hoppebolde, hvilket bringer hendes totale antal legetøj til nevøen op på 62. Hvor mange hoppebolde var der i røret?",
+  "answer": "Lad T være antallet af hoppebolde i røret.\nEfter at have købt røret med bolde, har Sophie 31 + 8 + 9 + T = 48 + T = 62 stykker legetøj til sin nevø.\nSåledes, T = 62 - 48 = <<62-48=14>>14 hoppebolde var der i røret.\n#### 14",
+  "id_orig": 930,
+  "id_shuffled": 9,
+  "question_annotated": "Når {navn, Sophie} passer sin {familie,nevø}, finder hun en række legetøj frem til ham. Byggestensposen har {x,31} klodser i sig. Kurven med tøjdyr har {y,8} tøjdyr indeni. Tårnet med stable-ringe har {z,9} flerfarvede ringe på sig. {navn, Sophie} købte for nylig et rør med hoppebolde, hvilket bringer hendes totale antal legetøj til sin {familie,nevø} op på {total,62}. Hvor mange hoppebolde var der i røret?\n\n#init:\n- navn = sample(names_female)\n- familie = sample([\"nevø\", \"fætter\", \"bror\"])\n- $x = range(70, 75)\n- $y = range(35, 50)\n- $z = range(20, 35)\n- $total = range(125, 250)\n- $ans = range(20, 100)\n\n#conditions:\n- x + y + z + ans == total\n\n#answer: ans",
+  "answer_annotated": "Lad T være antallet af hoppebolde i røret.\nEfter at have købt røret med bolde, har {navn} {x} + {y} + {z} + T = {x+y+z} + T = {total} stykker legetøj til sin {familie}.\nSåledes, T = {total} - {x+y+z} = <<{total}-{x+y+z}={ans}>>{ans} hoppebolde var der i røret.\n#### {ans}"
+}

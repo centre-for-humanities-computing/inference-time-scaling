@@ -1,0 +1,8 @@
+{
+  "question": "John plukker 4 bananer om onsdagen. Så plukker han 6 bananer om torsdagen. Om fredagen plukker han tre gange så mange bananer som han gjorde om onsdagen. Hvor mange bananer har John?",
+  "answer": "Kombinerer onsdag og torsdag, har John 4 bananer + 6 bananer = <<4+6=10>>10 bananer.\nOm fredagen plukker han 3 * 4 bananer = <<3*4=12>>12 bananer.\nI alt har John 10 bananer + 12 bananer = <<10+12=22>>22 bananer.\n#### 22",
+  "id_orig": 1020,
+  "id_shuffled": 20,
+  "question_annotated": "{name,John} plukker {n1,4} {fruit,banan}er om {d1,onsdag}. Så plukker han {n2,6} {fruit,banan}er om {d2,torsdag}. Om {d3,fredag}, plukker han {mult,tre gange} så mange {fruit,banan}er som han gjorde om {d1,onsdag}. Hvor mange {fruit,banan}er har {name,John}?\n\n#init:\n- name = sample(names_male)\n- d1, d2, d3 = sample_sequential(weekdays, 3)\n- fruit = sample(fruits)\n- $n1 = range(30, 400)\n- $n2 = range(50, 400)\n- $mult = sample(multiple)\n\n#answer: n1 + n2 + mult * n1",
+  "answer_annotated": "Kombinerer {d1} og {d2}, har {name} {n1} {fruit}er + {n2} {fruit}er = <<{n1}+{n2}={n1+n2}>>{n1+n2} {fruit}er.\nOm {d3}, plukker han {mult} * {n1} {fruit}er = <<{mult}*{n1}={mult*n1}>>{mult*n1} {fruit}er.\nI alt har {name} {n1+n2} {fruit}er + {mult*n1} {fruit}er = <<{n1+n2}+{n1*mult}={n1 + n2 + mult * n1}>>{n1 + n2 + mult * n1} {fruit}er.\n#### {n1 + n2 + mult * n1}"
+}

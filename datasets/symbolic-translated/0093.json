@@ -1,0 +1,8 @@
+{
+  "question": "Når vandet er koldt svømmer Ray en mile på 16 minutter. Når vandet er varmt svømmer Ray en mile på 2 minutter mere end dobbelt så lang tid. Hvor meget længere tager det Ray at svømme 3 miles på en varm dag end en kold dag?",
+  "answer": "Koldt vand mile = <<16=16>>16 minutter\nVarmt vand mile = 2+2(16)=34 minutter\n3 miles i koldt vand: 3(16)=<<3*16=48>>48 minutter\n3 miles i varmt vand: 3(34)=<<3*34=102>>102 minutter\nRay tager 102-48=<<102-48=54>>54 minutter længere\n#### 54",
+  "id_orig": 554,
+  "id_shuffled": 93,
+  "question_annotated": "Når vandet er koldt svømmer {name,Ray} en {unit,mile} på {t1,16} minutter. Når vandet er varmt svømmer {name,Ray} en {unit,mile} på {n,2} minutter mere end {mult,dobbelt} så lang tid. Hvor meget længere tager det {name,Ray} at svømme {d,3} {unit,mile} på en varm dag end en kold dag?\n\n#init:\n- name = sample(names)\n- unit = sample(['mile', 'kilometer'])\n- $t1 = range(10, 50)\n- $n = range(1, 10)\n- $mult = sample(multiple_ice+multi_times)\n- $d = range(2, 10)\n\n#conditions:\n- t1 < 60\n- n + mult * t1 < 60\n- d * (n + mult * t1) - d * t1 > 0\n\n#answer: d * (n + mult * t1) - d * t1",
+  "answer_annotated": "Koldt vand {unit} = <<{t1}={t1}>>{t1} minutter\nVarmt vand {unit} = {n}+{mult}({t1})={n + mult * t1} minutter\n{d} {unit}s i koldt vand: {d}({t1})=<<{d}*{t1}={d*t1}>>{d*t1} minutter\n{d} {unit}s i varmt vand: {d}({n + mult * t1})=<<{d}*{n + mult * t1}={d*(n + mult * t1)}>>{d*(n + mult * t1)} minutter\n{name} tager {d*(n + mult * t1)}-{d*t1}=<<{d*(n + mult * t1)}-{d*t1}={d * (n + mult * t1) - d * t1}>>{d * (n + mult * t1) - d * t1} minutter længere\n#### {d * (n + mult * t1) - d * t1}"
+}

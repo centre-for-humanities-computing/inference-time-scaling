@@ -1,0 +1,8 @@
+{
+  "question": "Et glas mælk er 8 ounces mælk. John drikker 2 glas mælk. Hvis mælk har 3 kalorier per ounce, hvor mange kalorier indtog han?",
+  "answer": "Han drak 8*2=<<8*2=16>>16 ounces mælk\nSå han drak 16*3=<<16*3=48>>48 kalorier fra mælk\n#### 48",
+  "id_orig": 400,
+  "id_shuffled": 56,
+  "question_annotated": "Et {container,glass} af {liquid,mælk} er {vol,8} {unit,ounces} af {liquid,mælk}. {name,John} drikker {num,2} {container,glass} af {liquid,mælk}. Hvis {liquid,mælk} har {cal,3} kalorier per {unit,ounce}, hvor mange kalorier indtog han?\n\n#init:\n- name = sample(names_male)\n- container = sample([\"kop\", \"flaske\", \"karton\"])\n- liquid = sample([\"juice\", \"sodavand\", \"danskvand\", \"te\", \"lemonade\"])\n- unit = sample([\"ounce\", \"mL\", \"cc\", \"oz\"])\n- $vol = range(6, 16)\n- $num = range(2, 6)\n- $cal = range(2, 10)\n\n\n#answer: vol * num * cal",
+  "answer_annotated": "Han drak {vol}*{num}=<<{vol}*{num}={vol*num}>>{vol*num} {unit} af {liquid}.\nSå han drak {vol*num}*{cal}=<<{vol*num}*{cal}={vol*num*cal}>>{vol*num*cal} kalorier fra {liquid}\n#### {vol*num*cal}"
+}

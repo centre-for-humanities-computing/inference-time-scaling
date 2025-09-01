@@ -1,0 +1,8 @@
+{
+  "question": "Shiela skal aflevere en 15-siders forskningsartikel. Hun har allerede skrevet 1/3 af artiklen. Hvor mange sider mangler hun stadig at skrive?",
+  "answer": "Shiela har allerede skrevet en tredjedel af artiklen, hvilket er 15 sider x 1/3 = <<15*1/3=5>>5 sider.\nSå hun mangler stadig at skrive 15 sider - 5 sider = <<15-5=10>>10 sider.\n#### 10",
+  "id_orig": 655,
+  "id_shuffled": 77,
+  "question_annotated": "{name,Shiela} skal aflevere en {n,15}-sidet {document,forskningsartikel}. Hun har allerede skrevet {frac,1/3} af {document,artiklen}. Hvor mange sider mangler hun stadig at skrive?\n\n#init:\n- name = sample(names_female)\n- document = sample([\"essay\", \"rapport\", \"afhandling\", \"dissertation\", \"opgave\"])\n- $n = range(10, 325)\n- $frac = sample(fraction_alnum)\n\n#conditions:\n- is_int(n * frac)\n- n * frac < n\n\n#answer: n - int(n * frac)",
+  "answer_annotated": "{name} har allerede skrevet {frac} af {document}, hvilket er {n} sider x {frac} = <<{n}*{frac}={int(n*frac)}>>{int(n*frac)} sider.\nSå hun mangler stadig at skrive {n} sider - {int(n*frac)} sider = <<{n}-{int(n*frac)}={n-int(n*frac)}>>{n-int(n*frac)} sider.\n#### {n-int(n*frac)}"
+}

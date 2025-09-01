@@ -1,0 +1,8 @@
+{
+  "question": "Om tirsdagen vil Peter træne i dobbelt så lang tid som han gjorde på mandag og søndag tilsammen. Om søndagen trænede han i 23 minutter. Om mandagen trænede han i 16 minutter. Hvor mange minutter skal han træne om tirsdagen for at nå sit mål?",
+  "answer": "Om søndagen og mandagen trænede han i alt 39 minutter fordi 23 + 16 = <<23+16=39>>39\nOm tirsdagen skal han træne i 78 minutter fordi 39 x 2 = <<39*2=78>>78\n#### 78",
+  "id_orig": 300,
+  "id_shuffled": 69,
+  "question_annotated": "On {day3,Tirsdag}, {name,Peter} wants to exercise for {mult,twice} the amount of time he did on {day2,Mandag} and {day1,Søndag} combined. On {day1,Søndag} he exercised for {t1,23} minutes. On {day2,Mandag} he exercised for {t2,16} minutes. How many minutes does he have to exercise on {day3,Tirsdag} to reach his goal?\n\n#init:\n- name = sample(names)\n- day1, day2, day3 = sample_sequential(weekdays, 3)\n- $t1 = range(10, 60)\n- $t2 = range(10, 60)\n- $mult = sample(multiple_ice+multi_times)\n\n#conditions:\n- t1 + t2 > 0\n- (t1 + t2) * mult / 60 < 14\n#answer: (t1 + t2) * mult",
+  "answer_annotated": "On {day1} and {day2} he exercised a total of {t1+t2} minutes because {t1} + {t2} = <<{t1}+{t2}={t1+t2}>>{t1+t2}\nOn {day3} he has to exercise for {(t1+t2)*mult} minutes because {t1+t2} x {mult} = <<{t1+t2}*{mult}={(t1+t2)*mult}>>{(t1+t2)*mult}\n#### {(t1+t2)*mult}"
+}

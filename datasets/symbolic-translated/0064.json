@@ -1,0 +1,8 @@
+{
+  "question": "Mary har 6 krukker krymmel i sit spisekammer. Hver krukke krymmel kan dekorere 8 cupcakes. Mary vil bage nok cupcakes til at bruge al hendes krymmel. Hvis hver bageform rummer 12 cupcakes, hvor mange forme cupcakes skal hun bage?",
+  "answer": "Hun har nok krymmel til 6 * 8 = <<6*8=48>>48 cupcakes.\nHun har brug for 48 / 12 = <<48/12=4>>4 forme for at bage alle cupcakes.\n#### 4",
+  "id_orig": 469,
+  "id_shuffled": 64,
+  "question_annotated": "{name,Mary} har {n,6} krukker {item,krymmel} i sit {location,spisekammer}. Hver krukke {item,krymmel} kan dekorere {m,8} {food,cupcake}s. {name,Mary} vil bage nok {food,cupcake}s til at bruge al hendes {item,krymmel}. Hvis hver {container,bageform} rummer {k,12} {food,cupcake}s, hvor mange {container,bageform}e skal hun bage?\n\n#init:\n- name = sample(names_female)\n- item = sample([\"sprinkles\", \"frosting\", \"icing\", \"chocolate chips\"])\n- food = sample([\"cupcake\", \"cookie\", \"brownie\", \"muffin\"])\n- location = sample([\"pantry\", \"cupboard\", \"kitchen cabinet\", \"storage room\"])\n- container = sample([\"pan\", \"tray\", \"baking sheet\", \"rack\"])\n- $n = range(3, 15)\n- $m = range(6, 20)\n- $k = range(6, 24)\n\n#conditions:\n- divides(n*m, k)\n\n#answer: (n*m)//k",
+  "answer_annotated": "Hun har nok {item} til {n} * {m} = <<{n}*{m}={n*m}>>{n*m} {food}s.\nHun har brug for {n*m} / {k} = <<{n*m}/{k}={(n*m)//k}>>{(n*m)//k} {container}s for at bage alle {food}s.\n#### {(n*m)//k}"
+}
