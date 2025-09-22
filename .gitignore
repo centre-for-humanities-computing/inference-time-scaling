@@ -1,3 +1,6 @@
 *__pycache__
 *.ipynb_checkpoints
-results/
+results/meta-llama/*
+results/Qwen/*
+.env
+code/output.log
