@@ -151,20 +151,18 @@ def main():
 
             # get the response from the model
             if config.method == "forward-pass":
-
                 forward_pass(miner, question, question_idx, config, output_path)
 
             elif config.method == "kl-divergence":
-
                 _ = miner.get_response(
-                method=config.method,
-                question=question,
-                max_reasoning_steps=config.max_reasoning_steps,
-                n_proposal=config.n_proposal,
-                is_an_answer_pattern=config.is_an_answer_pattern,
-                output_path=output_path,
-                question_idx=question_idx,
-                config=config,
+                    method=config.method,
+                    question=question,
+                    max_reasoning_steps=config.max_reasoning_steps,
+                    n_proposal=config.n_proposal,
+                    is_an_answer_pattern=config.is_an_answer_pattern,
+                    output_path=output_path,
+                    question_idx=question_idx,
+                    config=config,
                 )
 
             else:
