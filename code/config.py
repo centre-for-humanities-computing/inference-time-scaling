@@ -3,6 +3,7 @@
 from dataclasses import dataclass
 from argparse import ArgumentParser
 import torch
+from typing import Optional
 
 
 @dataclass
@@ -20,6 +21,7 @@ class Config:
     is_an_answer_pattern: str = ""
     promt_style: str = ""
     overwrite: bool = False
+    max_sampling_steps: Optional[int] = None
 
     def __post_init__(self):
         """Set dependent fields after initialization."""
@@ -41,7 +43,8 @@ def parse_args() -> Config:
         default="Qwen/Qwen2.5-0.5B-Instruct",
     )
     parser.add_argument("--output_path", type=str, default="results")
-    parser.add_argument("--max_reasoning_steps", type=int, default=30)
+    parser.add_argument("--max_reasoning_steps", type=int, default=40)
+    parser.add_argument("--max_sampling_steps", type=int, default=40)
     parser.add_argument("--n_questions", type=int, default=-1)  # Fixed type
     parser.add_argument("--dataset", type=str, default="math500")
     parser.add_argument("--n_proposal", type=int, default=8)
@@ -59,4 +62,5 @@ def parse_args() -> Config:
         dataset=args.dataset,
         n_proposal=args.n_proposal,
         overwrite=args.overwrite,
+        max_sampling_steps=args.max_sampling_steps,
     )

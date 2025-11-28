@@ -163,6 +163,22 @@ def main():
                     output_path=output_path,
                     question_idx=question_idx,
                     config=config,
+                    max_sampling_steps=config.max_sampling_steps,
+                )
+
+            elif config.method == "early-stop":
+                output_path = output_path / str(config.max_sampling_steps)
+
+                _ = miner.get_response(
+                    method="kl-divergence",
+                    question=question,
+                    max_reasoning_steps=config.max_reasoning_steps,
+                    n_proposal=config.n_proposal,
+                    is_an_answer_pattern=config.is_an_answer_pattern,
+                    output_path=output_path,
+                    question_idx=question_idx,
+                    config=config,
+                    max_sampling_steps=config.max_sampling_steps,
                 )
 
             else:

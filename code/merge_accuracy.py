@@ -48,7 +48,6 @@ for dataset in ["math500", "gsm8k-en", "gsm8k-da"]:
                                 "dataset": dataset,
                                 "n_samples": 1,
                                 "file_path": file_path.name,
-                                "model_response": model_response,
                                 "response_number": response_number,
                                 "expected_answer": answer,
                                 "model_output": model_output,
@@ -109,7 +108,6 @@ for dataset in ["math500", "gsm8k-en", "gsm8k-da"]:
                                 "dataset": dataset,
                                 "n_samples": n_samples,
                                 "file_path": file_path.name,
-                                "model_response": model_response,
                                 "response_number": [1],
                                 "expected_answer": answer,
                                 "model_output": model_output,
@@ -150,7 +148,7 @@ for dataset in ["math500", "gsm8k-en", "gsm8k-da"]:
             for n_samples in [2, 4, 8]:
                 combinations = list(itertools.combinations(range(8), n_samples))
 
-                for response_number, combination in enumerate(combinations[:5]):
+                for response_number, combination in enumerate(combinations[:8]):
                     model_output = []
                     for resp_idx in combination:
                         model_response = data[f"model_response_{resp_idx}"]
@@ -183,7 +181,6 @@ for dataset in ["math500", "gsm8k-en", "gsm8k-da"]:
                                     "dataset": dataset,
                                     "n_samples": n_samples,
                                     "file_path": file_path.name,
-                                    "model_response": model_response,
                                     "response_number": response_number,
                                     "expected_answer": answer,
                                     "model_output": model_output,

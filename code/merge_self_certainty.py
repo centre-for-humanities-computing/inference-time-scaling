@@ -53,7 +53,6 @@ for model_id in [
                     )
                 else:
                     expected_answer = strip_string(data["expected_answer"])
-                expected_answer = strip_string(data["expected_answer"])
                 model_output = extract_answer(model_response, data_name=dataset)
                 accuracy = math_equal(model_output, expected_answer)
 
