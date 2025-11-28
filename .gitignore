@@ -1,6 +1,6 @@
 *__pycache__
 *.ipynb_checkpoints
-results/meta-llama/*
-results/Qwen/*
+results/*
 .env
 code/output.log
+results/merged_accuracy.csv
